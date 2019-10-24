@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  vt-666:
+    hostname: vt-666
+    build:
+      context: ./
+      dockerfile: docker/dev/Dockerfile
+    ports:
+    - ${PUBLIC_WEB_PORT}:80
+    - ${PUBLIC_SSL_PORT}:443
+    volumes:
+    - ./dist:/usr/share/nginx/html
