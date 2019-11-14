@@ -13,16 +13,18 @@
   },
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.6.0",
+    "babel-preset-es2015-rollup": "^3.0.0",
     "babelify": "^10.0.0",
-    "typescript": "^3.6.3"
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-typescript": "^1.0.1",
+    "tslib": "^1.10.0",
+    "typescript": "^3.7.2"
   },
   "dependencies": {
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
     "@webcomponents/webcomponentsjs": "^2.2.10",
-    "babel-plugin-wildcard": "^5.0.0",
     "document-register-element": "^1.11.1",
-    "es-module-loader": "^2.3.0",
     "factor-bundle": "^2.5.0",
     "grunt": "^1.0.4",
     "grunt-browserify": "^5.3.0",
@@ -30,6 +32,7 @@
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-uglify": "^4.0.0",
     "grunt-contrib-watch": "^1.1.0",
+    "grunt-rollup": "^10.0.0",
     "grunt-ts": "^6.0.0-beta.22",
     "minifyify": "^7.3.5"
   }

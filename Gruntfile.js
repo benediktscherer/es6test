@@ -1,5 +1,8 @@
 module.exports = function (grunt) {
 
+    var babel = require('rollup-plugin-babel');
+    var typescript = require('rollup-plugin-typescript');
+
     const conf = {
         cwd: 'src/',
         dest: 'dist/',
@@ -17,62 +20,27 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        /**
-         * Compile TypeScript
-         * https://www.npmjs.com/package/grunt-ts
-         */
-        ts: {
-            default: {
-                options: {
-                    allowJs: false,
-                    module: 'commonjs',
-                    moduleResolution: 'Node',
-                    target: 'es6',
-                    declaration: false,
-                    diagnostics: false,
-                    experimentalDecorators: true,
-                    emitDecoratorMetadata: true,
-                    sourceMap: true,
-                    rootDir: conf.jsCwd,
-                    compile: true
-                },
-                src: [
-                    conf.jsCwd + '**/*.ts'
-                ],
-                outDir: conf.jsCompile
-            }
-        },
-
 
         /**
-         * Browserify
-         * https://github.com/jmreidy/grunt-browserify
-         * https://github.com/browserify/browserify
-         * https://mitchgavan.com/es6-modules/
+         * https://rollupjs.org
+         * https://www.npmjs.com/package/grunt-rollup
          */
-        browserify: {
+        rollup: {
             options: {
-                debug: true,
-                extensions: ['.ts', '.js'],
-                transform: [
-                    [
-                        "babelify", {
-                        "presets": ["@babel/env"],
-                        "plugins": ["wildcard", {}]
-                    }
-                    ]
+                presets: [
                 ],
-                external: []
+                plugins: [
+                    typescript(),
+                ]
             },
-
             app: {
                 src: [
-                    conf.jsCompile + '/**/*.js',
+                    conf.jsCwd + '/**/*.ts',
                 ],
-                dest: conf.jsDest + 'app.js',
-                paths: [conf.vendorCwd, conf.jsCompile],
-            }
+                dest: conf.jsDest + 'index',
+            },
         },
+
 
         uglify: {
             libraries: {
@@ -122,7 +90,7 @@ module.exports = function (grunt) {
                 files: [
                     conf.jsCwd + '**/*.ts'
                 ],
-                tasks: ['ts', 'browserify:app'],
+                tasks: ['rollup'],
                 options: {
                     spawn: false
                 }
@@ -141,6 +109,7 @@ module.exports = function (grunt) {
 
 
     grunt.loadNpmTasks("grunt-browserify");
+    grunt.loadNpmTasks("grunt-rollup");
     grunt.loadNpmTasks("grunt-contrib-uglify");
 
     grunt.loadNpmTasks("grunt-ts");
@@ -148,6 +117,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
 
     // Define Task(s)
-    grunt.registerTask('default', ['ts', 'browserify', 'uglify', 'copy']);
+    grunt.registerTask('default', ['rollup', 'uglify', 'copy']);
     grunt.registerTask('dev', ['default', 'watch']);
 };

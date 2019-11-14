@@ -12,8 +12,9 @@ export default class VAComponentElement extends HTMLElement {
     connectedCallback(): void {
         console.log('find element: ', this.name);
 
-        // let path = '../../components/' + this.name + 'Component/' + this.name + 'Component';
-        let path: string = '../../components/Level1Component/Level1Component';
+        let path = '/js/index/' + this.name + 'Component.js';
+        // let path: string = '../../js/index/Level1Component.js';
+        // let path: string = 'Level1Component';
 
         // let x = new components[this.name + 'Component']();
         // x.init();
