@@ -1,4 +1,4 @@
-import {VT3000} from './VT666'
+import {VT3000} from './VT666/index'
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log("Ready.");

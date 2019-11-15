@@ -1,23 +1,21 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "moduleResolution": "Node",
-    "target": "es6",
-    "declaration": true,
-    "noImplicitAny": false,
-    "removeComments": true,
-    "preserveConstEnums": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "diagnostics": true,
+    "noImplicitThis": true,
+    "noEmitOnError": true,
+    "lib": ["es5", "es6", "dom"],
     "sourceMap": true,
-    "inlineSources": true,
-
-    "outDir": "./dist"
+    "outDir": "./dist/js/"
   },
+  "target": "ES5",
+  "module": "ES6",
   "include": [
-    "src/**/*"
+    "src/scripts/**/*"
   ],
-  "lib": [
-    "es6",
-    "es7",
-    "dom"
+  "exclude": [
+    "node_modules"
   ]
 }

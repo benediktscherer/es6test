@@ -21,24 +21,77 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
 
+        babel: {
+            options: {
+                sourceType: 'module',
+                sourceMap: true,
+                cwd: conf.jsCwd
+            },
+            dist: {
+                files: {
+                    'dist/js/babel.js': 'src/scripts/**/*.ts'
+                }
+            }
+        },
+
+
         /**
          * https://rollupjs.org
          * https://www.npmjs.com/package/grunt-rollup
          */
         rollup: {
             options: {
-                presets: [
-                ],
+                presets: [],
                 plugins: [
                     typescript(),
                 ]
             },
+            folder: {
+                src: [
+                    conf.jsCwd + '/**/*.ts',
+                ],
+                dest: conf.jsDest + 'rollup',
+            },
+
+            file: {
+                src: [
+                    conf.jsCwd + '/index.ts',
+                ],
+                dest: conf.jsDest + 'rollup.js',
+            },
+        },
+
+
+        /**
+         * Browserify
+         * https://github.com/jmreidy/grunt-browserify
+         * https://github.com/browserify/browserify
+         * https://mitchgavan.com/es6-modules/
+         */
+        browserify: {
+            options: {
+                debug: true,
+                extensions: ['.ts', '.js'],
+                plugins: [
+                    'tsify', {
+                        target: 'es6'
+                    }
+                ],
+                transform: [
+                    [
+                        "babelify", {presets: ["@babel/env"], extensions: ['.tsx', '.ts']}
+                    ]
+                ],
+                external: []
+            },
+
             app: {
                 src: [
                     conf.jsCwd + '/**/*.ts',
                 ],
-                dest: conf.jsDest + 'index',
-            },
+                dest: conf.jsDest + 'browserify.js',
+                paths: [conf.vendorCwd],
+            }
         },
 
 
@@ -110,6 +163,7 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks("grunt-browserify");
     grunt.loadNpmTasks("grunt-rollup");
+    grunt.loadNpmTasks("grunt-babel");
     grunt.loadNpmTasks("grunt-contrib-uglify");
 
     grunt.loadNpmTasks("grunt-ts");
