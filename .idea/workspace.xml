@@ -2,17 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a614852-778f-4efa-ae5b-f59846a14d8c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scripts/components/Sub/Level1Component/Level1Component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/es6test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/es6test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gruntfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/Gruntfile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scripts/VT666/BaseComponent.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/VT666/BaseComponent.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scripts/VT666/elements/VAComponentElement.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/VT666/elements/VAComponentElement.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scripts/components/Level1Component/Level1Component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/components/Level1Component/Level1Component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scripts/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/components/Sub/Level1Component/Level1Component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/components/Sub/Level2Component/Level2Component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +33,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.buildTools.grunt.grunt-cli.package" value="$PROJECT_DIR$/node_modules/grunt-cli" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/scripts/components/Sub" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/dist/js" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -42,6 +42,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dist/js" />
       <recent name="$PROJECT_DIR$/src/scripts/components/Sub" />
     </key>
   </component>
@@ -98,7 +99,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1573807810986</updated>
-      <workItem from="1573807812456" duration="8042000" />
+      <workItem from="1573807812456" duration="13916000" />
     </task>
     <servers />
   </component>

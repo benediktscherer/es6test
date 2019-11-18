@@ -1,10 +1,6 @@
 import BaseComponent from '../../../VT666/BaseComponent';
 
-export default class SubLevel1Component {
-
-    public constructor() {
-        console.log();
-    }
+export default class Level2Component extends BaseComponent {
 
     public init(): Promise<boolean> {
 

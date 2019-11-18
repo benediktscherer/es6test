@@ -2,6 +2,7 @@ module.exports = function (grunt) {
 
     var babel = require('rollup-plugin-babel');
     var typescript = require('rollup-plugin-typescript');
+    var multiEntry = require('rollup-plugin-multi-entry');
 
     const conf = {
         cwd: 'src/',
@@ -10,7 +11,7 @@ module.exports = function (grunt) {
         vendorCwd: 'node_modules/',
         jsCwd: 'src/scripts/',
         jsDest: 'dist/js/',
-        jsCompile: 'src/scripts/_tmp',
+        jsCompile: 'comp/',
 
         viewsCwd: 'src/views/',
         viewsDest: 'dist/'
@@ -42,22 +43,24 @@ module.exports = function (grunt) {
         rollup: {
             options: {
                 presets: [],
+                dir: conf.jsDest,
                 plugins: [
                     typescript(),
+                    multiEntry()
                 ]
             },
-            folder: {
-                src: [
-                    conf.jsCwd + '/**/*.ts',
-                ],
-                dest: conf.jsDest + 'rollup',
-            },
 
-            file: {
+            bundle: {
                 src: [
                     conf.jsCwd + '/index.ts',
                 ],
                 dest: conf.jsDest + 'rollup.js',
+            },
+            components: {
+                src: [
+                    conf.jsCwd + '/components/**/*.ts'
+                ],
+                dest: conf.jsDest + 'components',
             },
         },
 
@@ -70,6 +73,7 @@ module.exports = function (grunt) {
          */
         browserify: {
             options: {
+                sourceType: 'module',
                 debug: true,
                 extensions: ['.ts', '.js'],
                 plugins: [
@@ -87,7 +91,7 @@ module.exports = function (grunt) {
 
             app: {
                 src: [
-                    conf.jsCwd + '/**/*.ts',
+                    conf.jsCompile + '/**/*.js',
                 ],
                 dest: conf.jsDest + 'browserify.js',
                 paths: [conf.vendorCwd],
@@ -152,7 +156,7 @@ module.exports = function (grunt) {
                 files: [
                     conf.viewsCwd + '/**'
                 ],
-                tasks: ['replace:views'],
+                tasks: ['copy'],
                 options: {
                     spawn: false
                 }

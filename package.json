@@ -10,16 +10,21 @@
   "scripts": {
     "grunt": "grunt",
     "clean": "rm -rf ./dist/ && rm -rf ./src/scripts/_tmp && rm -rf ./node_modules",
-    "webpack": "npx webpack --config webpack.config.js"
+    "ts": "./node_modules/typescript/bin/tsc",
+    "webpack": "npx webpack --config webpack.config.js",
+    "browserify": "./node_modules/grunt-cli/bin/grunt browserify",
+    "rollup": "./node_modules/grunt-cli/bin/grunt rollup"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.7.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
     "@babel/plugin-transform-modules-commonjs": "^7.6.0",
     "@babel/preset-typescript": "^7.7.2",
+    "awesome-typescript-loader": "^5.2.1",
     "babel-preset-es2015-rollup": "^3.0.0",
     "babelify": "^10.0.0",
     "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-multi-entry": "^2.1.0",
     "rollup-plugin-typescript": "^1.0.1",
     "ts-loader": "^6.2.1",
     "tslib": "^1.10.0",

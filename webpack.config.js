@@ -1,22 +1,30 @@
 const path = require('path');
 
-module.exports = {
+const config = {
     mode: 'development',
-    resolve: {
-        extensions: [ '.tsx', '.ts', '.js' ],
+    entry: './src/scripts/index.ts',
+    output: {
+        path: path.resolve(__dirname, 'dist/js'),
+        filename: 'bundle.js'
     },
     module: {
         rules: [
             {
-                test: /\.tsx?$/,
-                use: 'ts-loader',
-                exclude: /node_modules/,
-            },
-        ],
+                test: /\.ts(x)?$/,
+                use: [
+                    'awesome-typescript-loader'
+                ],
+                exclude: /node_modules/
+            }
+        ]
     },
-    entry: path.join(__dirname, 'src/scripts'),
-    output: {
-        filename: 'webpack.js',
-        path: path.resolve(__dirname, 'dist/js'),
+    resolve: {
+        extensions: [
+            '.tsx',
+            '.ts',
+            '.js'
+        ]
     }
 };
+
+module.exports = config;

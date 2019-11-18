@@ -1,21 +1,16 @@
 {
   "compilerOptions": {
-    "module": "esnext",
-    "moduleResolution": "node",
-    "noImplicitAny": true,
-    "diagnostics": true,
-    "noImplicitThis": true,
-    "noEmitOnError": true,
-    "lib": ["es5", "es6", "dom"],
+    "outDir": "./comp",
     "sourceMap": true,
-    "outDir": "./dist/js/"
+    "strict": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "module": "es6next",
+    "moduleResolution": "node",
+    "target": "es5",
+    "allowJs": true
   },
-  "target": "ES5",
-  "module": "ES6",
   "include": [
-    "src/scripts/**/*"
-  ],
-  "exclude": [
-    "node_modules"
+    "./src/scripts/**/*"
   ]
 }
