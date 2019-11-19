@@ -1,4 +1,3 @@
-
 export default class VAComponentElement extends HTMLElement {
 
     get name() {
@@ -12,11 +11,9 @@ export default class VAComponentElement extends HTMLElement {
     connectedCallback(): void {
         console.log('find element: ', this.name);
 
-        // let path = '/js/index/' + this.name + 'Component.js';
-        let path: string = 'Level1Component';
-        // let path: string = 'Level1Component';
+        let path: string = 'Level1Component/Level1Component';
 
-        import('Level1Component').then(c => {
+        import(`../../components/${path}`).then(c => {
             let vtElementClass = new c.default();
             vtElementClass.init();
         }).catch(e => {

@@ -2,7 +2,7 @@ export default class BaseComponent {
 
     public config: any;
 
-    protected constructor(config = {}) {
+    constructor(config = {}) {
         this.config = config;
     }
 
