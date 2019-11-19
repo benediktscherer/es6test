@@ -18,6 +18,7 @@
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
+    "@talentsconnect/vt-3000": "^1.2.19",
     "@webcomponents/webcomponentsjs": "^2.2.10",
     "document-register-element": "^1.11.1",
     "grunt": "^1.0.4",

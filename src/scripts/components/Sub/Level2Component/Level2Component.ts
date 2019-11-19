@@ -1,4 +1,4 @@
-import BaseComponent from '../../../VT666/BaseComponent';
+import BaseComponent from "@talentsconnect/vt-3000/dist/BaseComponent";
 
 export default class Level2Component extends BaseComponent {
 
